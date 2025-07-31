@@ -8,7 +8,6 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div className="bg-blue-200 text-xl p-4">Hola mundo</div>
       <Header />
       <div className="flex">
         <Sidebar />
