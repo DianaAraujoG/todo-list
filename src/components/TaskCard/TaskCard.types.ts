@@ -1,12 +1,12 @@
-export type TaskStatus = "pending" | "inProgress" | "completed";
+import type { TaskAtributes, TaskStatus } from "../../types/Task.types";
+import type { TaskContainerProps } from "../TaskContainer/TaskContainer.types";
 
 export type TextStatus = {
   [key in TaskStatus]: string;
 };
 
 export interface TaskCardProps {
-  title: string;
-  dateCreate: string;
-  status: TaskStatus;
-  description: string;
+  task: TaskAtributes;
+  onEdit: TaskContainerProps["onEdit"];
+  onDelete: TaskContainerProps["onDelete"];
 }
