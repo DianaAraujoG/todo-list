@@ -31,8 +31,6 @@ function App() {
   const [filterList, setFilterList] = useState<TaskAtributes[]>([]);
   const [statusSelect, setStatusSelect] = useState<SelectStatus>("all");
 
-  console.log("taskList: ", taskList, "taskDelete: ", taskDelete);
-
   useEffect(() => {
     setFilterList(taskList);
   }, [taskList]);
