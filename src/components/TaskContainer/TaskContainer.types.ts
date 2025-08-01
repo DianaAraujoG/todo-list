@@ -1,5 +1,7 @@
-import type { TaskCardProps } from "../TaskCard/TaskCard.types";
+import type { TaskAtributes } from "../../types/Task.types";
 
 export interface TaskContainerProps {
-  taskList: TaskCardProps[];
+  taskList: TaskAtributes[];
+  onEdit: (task: TaskAtributes) => void;
+  onDelete: (task: TaskAtributes) => void;
 }
