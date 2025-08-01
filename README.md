@@ -1,69 +1,104 @@
-# React + TypeScript + Vite
+# 📝 ToDo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para gestionar tareas. Permite crear, leer, actualizar y eliminar tareas. Desarrollada con **React**, **TypeScript**, **Tailwind CSS** y **json-server** como backend simulado.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- json-server (API mock)
+- Axios
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧑‍💻 Instalación
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Clona el repositorio:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+   ```bash
+   git clone https://github.com/DianaAraujoG/todo-list.git
+   cd todo-list
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+
+---
+
+## 🧩 Scripts disponibles
+
+### Iniciar el proyecto en desarrollo:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Iniciar json-server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run server
 ```
+
+Esto levantará el backend simulado en:  
+📡 `http://localhost:3001/tasks`
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+todo-app/
+│
+├── public/
+├── src/
+│   ├── components/         → Componentes UI
+│   ├── hooks/              → Hooks personalizados
+│   ├── services/           → API services (axios)
+│   ├── types/              → Tipado TypeScript
+│   ├── App.tsx
+│   └── main.tsx
+│
+├── db.json                → Base de datos mock para json-server
+├── tsconfig.json          → Configuración de TypeScript
+├── vite.config.ts         → Configuración de Vite
+└── README.md
+```
+
+---
+
+## 📦 Script personalizado
+
+Puedes agregar esto en tu `package.json` para levantar el servidor:
+
+```json
+"scripts": {
+  "dev": "vite",
+  "server": "json-server --watch db.json --port 3001"
+}
+```
+
+---
+
+## 📌 Notas
+
+- El backend simulado (`json-server`) se usa únicamente para desarrollo.
+- Asegúrate de que el puerto 3001 esté libre para evitar conflictos.
+- Puedes editar el archivo `db.json` para precargar tareas si lo deseas.
+
+---
+
+## 🧠 Autor
+
+**Diana Laura Gómez Araujo**  
+👩‍💻 Frontend Developer - React | TypeScript | UI/UX
+
+---
+
+## ✅ Estado
+
+Proyecto en desarrollo ✅  
+CRUD funcional, diseño responsivo, API mock funcionando.
